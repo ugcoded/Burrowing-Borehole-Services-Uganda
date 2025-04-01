@@ -70,7 +70,7 @@ nav .nav-menu li.active a {
 
 /* Hamburger Menu Styles */
 .nav-toggle {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by default, used for toggle */
 }
 
 .hamburger {
@@ -721,7 +721,7 @@ footer p {
         z-index: 99;
     }
 
-    .nav-toggle:checked ~ .nav-menu {
+    .nav-toggle:checked + .hamburger ~ .nav-menu {
         display: flex; /* Show when checkbox is checked */
     }
 
