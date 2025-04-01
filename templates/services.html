@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Our Services{% endblock %}
+{% block content %}
+    <!-- Hero Section with Static Image -->
+    <section class="hero static-hero">
+        <div class="container">
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/services-hero.jpg') }}" alt="Our Services">
+            </div>
+            <div class="hero-content">
+                <h1>Our Services</h1>
+                <p>Discover our comprehensive range of water solution services tailored to your needs.</p>
+                <a href="/contact" class="btn">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer Section with Individual Containers and Images -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <div class="features">
+                <div class="feature service-container">
+                    <img src="{{ url_for('static', filename='images/borehole-drilling.jpg') }}" alt="Borehole Drilling" class="service-image">
+                    <h3>Borehole Drilling</h3>
+                    <p>Expert, environmentally friendly drilling tailored to site conditions.</p>
+                </div>
+                <div class="feature service-container">
+                    <img src="{{ url_for('static', filename='images/borehole-maintenance.jpg') }}" alt="Borehole Maintenance" class="service-image">
+                    <h3>Borehole Maintenance</h3>
+                    <p>Routine inspections, cleaning, and repairs for longevity.</p>
+                </div>
+                <div class="feature service-container">
+                    <img src="{{ url_for('static', filename='images/water-quality-testing.jpg') }}" alt="Water Quality Testing" class="service-image">
+                    <h3>Water Quality Testing</h3>
+                    <p>Advanced testing to ensure safe, clean water.</p>
+                </div>
+                <div class="feature service-container">
+                    <img src="{{ url_for('static', filename='images/pump-installation.jpg') }}" alt="Pump Installation" class="service-image">
+                    <h3>Pump Installation</h3>
+                    <p>Reliable pump services for efficient water extraction.</p>
+                </div>
+                <div class="feature service-container">
+                    <img src="{{ url_for('static', filename='images/hydrogeological-surveys.jpg') }}" alt="Hydrogeological Surveys" class="service-image">
+                    <h3>Hydrogeological Surveys</h3>
+                    <p>Assessing groundwater availability and quality.</p>
+                </div>
+                <div class="feature service-container">
+                    <img src="{{ url_for('static', filename='images/water-system-design.jpg') }}" alt="Water System Design" class="service-image">
+                    <h3>Water System Design</h3>
+                    <p>Customized systems for all client needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

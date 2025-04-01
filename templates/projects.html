@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Our Projects{% endblock %}
+{% block content %}
+    <!-- Hero Section with Static Image -->
+    <section class="hero static-hero">
+        <div class="container">
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/projects-hero.jpg') }}" alt="Our Projects">
+            </div>
+            <div class="hero-content">
+                <h1>Our Projects</h1>
+                <p>Explore our successful water solution projects in action.</p>
+                <a href="/contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Two Video Containers -->
+    <section class="projects-section">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="video-row">
+                <div class="video-container">
+                    <video controls>
+                        <source src="{{ url_for('static', filename='videos/project-video.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Sustainable borehole solution in action.</p>
+                </div>
+                <div class="video-container">
+                    <video controls>
+                        <source src="{{ url_for('static', filename='videos/project-video1.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Water system installation project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section with Equal Grid and Hover Overlays (No Titles) -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Project Gallery</h2>
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item">
+                    <img data-src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Project 1" class="lazy">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Project 2" class="lazy">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Project 3" class="lazy">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="{{ url_for('static', filename='images/project4.jpg') }}" alt="Project 4" class="lazy">
+                    <div class="overlay"></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="{{ url_for('static', filename='images/project5.jpg') }}" alt="Project 5" class="lazy">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Lazy Loading -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll("img.lazy");
+            const options = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove("lazy");
+                        observer.unobserve(img);
+                    }
+                });
+            }, options);
+
+            images.forEach(img => observer.observe(img));
+        });
+    </script>
+{% endblock %}

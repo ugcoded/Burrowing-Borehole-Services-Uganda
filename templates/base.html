@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Burrowing Borehole</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Burrowing Borehole Logo">
+            </div>
+            <ul>
+                <li class="{% if request.path == '/' %}active{% endif %}"><a href="/">Home</a></li>
+                <li class="{% if request.path == '/services' %}active{% endif %}"><a href="/services">Services</a></li>
+                <li class="{% if request.path == '/projects' %}active{% endif %}"><a href="/projects">Projects</a></li>
+                <li class="{% if request.path == '/about' %}active{% endif %}"><a href="/about">About</a></li>
+                <li class="{% if request.path == '/contact' %}active{% endif %}"><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Burrowing Borehole Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

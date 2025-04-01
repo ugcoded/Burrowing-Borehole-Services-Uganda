@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Home - Water Solutions{% endblock %}
+{% block content %}
+    <!-- Hero Section with Slideshow -->
+    <section class="hero">
+        <div class="slideshow">
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/hero1.jpg') }}" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/hero2.jpg') }}" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="{{ url_for('static', filename='images/hero3.jpg') }}" alt="Slide 3">
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Burrowing Borehole</h1>
+                <p>Your trusted partner for sustainable water solutions.</p>
+                <div class="hero-actions">
+                    <a href="/services" class="btn primary-btn">Get Started</a>
+                    <div class="social-links">
+                        <p>Connect with us</p>
+                        <div class="social-buttons">
+                            <a href="https://facebook.com" class="social-btn facebook-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                                <span class="social-icon facebook-icon"></span>
+                            </a>
+                            <a href="https://instagram.com" class="social-btn instagram-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
+                                <span class="social-icon instagram-icon"></span>
+                            </a>
+                            <a href="https://wa.me/1234567890" class="social-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">
+                                <span class="social-icon whatsapp-icon"></span>
+                            </a>
+                            <a href="https://www.tiktok.com/@yourusername" class="social-btn tiktok-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit our TikTok page">
+                                <span class="social-icon tiktok-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="features">
+                <div class="feature diagonal-card">
+                    <h3>Reliability</h3>
+                    <p>Dependable water solutions you can trust.</p>
+                </div>
+                <div class="feature diagonal-card">
+                    <h3>Expertise</h3>
+                    <p>Years of experience in the industry.</p>
+                </div>
+                <div class="feature diagonal-card">
+                    <h3>Sustainability</h3>
+                    <p>Eco-friendly practices for a greener future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Gallery Preview Section -->
+    <section class="gallery-preview">
+        <div class="container">
+            <h2>Our Projects Preview</h2>
+            <div class="gallery-scroll">
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Project 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Project 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Project 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/project4.jpg') }}" alt="Project 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{ url_for('static', filename='images/project5.jpg') }}" alt="Project 5">
+                </div>
+            </div>
+            <a href="/projects" class="btn secondary-btn">View Full Gallery</a>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary">
+        <div class="container">
+            <h2>Our Commitment</h2>
+            <div class="features">
+                <div class="feature card">
+                    <h3>Quality Service</h3>
+                    <p>We deliver top-notch water solutions tailored to your needs.</p>
+                    <a href="/services" class="summary-link">Learn More</a>
+                </div>
+                <div class="feature card">
+                    <h3>Community Impact</h3>
+                    <p>Improving lives through accessible water systems.</p>
+                    <a href="/about" class="summary-link">About Us</a>
+                </div>
+                <div class="feature card">
+                    <h3>Trusted Partner</h3>
+                    <p>Building lasting relationships with our clients.</p>
+                    <a href="/contact" class="summary-link">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
