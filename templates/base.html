@@ -10,9 +10,18 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Burrowing Borehole Logo">
+                <!-- Assuming logo is now on Google Drive; update FILE_ID -->
+                <img src="https://drive.google.com/uc?export=view&id=145MJVHlqNrRNnj2qGuM-E9z5Mj-m-J5t" alt="Burrowing Borehole Logo">
             </div>
-            <ul>
+            <!-- Hamburger Toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
                 <li class="{% if request.path == '/' %}active{% endif %}"><a href="/">Home</a></li>
                 <li class="{% if request.path == '/services' %}active{% endif %}"><a href="/services">Services</a></li>
                 <li class="{% if request.path == '/projects' %}active{% endif %}"><a href="/projects">Projects</a></li>
@@ -26,7 +35,7 @@
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2025 Burrowing Borehole Services. All rights reserved.</p>
+            <p>© 2025 Burrowing Borehole Services. All rights reserved.</p>
         </div>
     </footer>
 </body>
