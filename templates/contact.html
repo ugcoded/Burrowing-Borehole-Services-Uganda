@@ -1,54 +1,50 @@
 {% extends "base.html" %}
-{% block title %}Contact Us - Water Solutions{% endblock %}
+{% block title %}Contact Us{% endblock %}
 {% block content %}
+    <!-- Hero Section with Static Image -->
     <section class="hero static-hero">
-        <div class="hero-image">
-            <img src="https://drive.google.com/uc?export=view&id=JYfnvMQuxMmvpI2aF2pLfIV_RVWcE" alt="Contact Hero Image">
-        </div>
         <div class="container">
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='images/contact-hero.jpg') }}" alt="Contact Us">
+            </div>
             <div class="hero-content">
                 <h1>Contact Us</h1>
-                <p>We’re here to assist you with your water solution needs.</p>
-                <div class="hero-actions">
-                    <div class="social-links">
-                        <p>Connect with us</p>
-                        <div class="social-buttons">
-                            <a href="https://www.facebook.com/burrowingboreholeservices" class="social-btn facebook-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
-                                <span class="social-icon facebook-icon"></span>
-                            </a>
-                            <a href="https://www.instagram.com/burrowing.borehole.services_ug?igsh=MW1xNTZxbm90eXFxdA==" class="social-btn instagram-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
-                                <span class="social-icon instagram-icon"></span>
-                            </a>
-                            <a href="https://wa.me/256707140593" class="social-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Message us on WhatsApp">
-                                <span class="social-icon whatsapp-icon"></span>
-                            </a>
-                            <a href="http://www.tiktok.com/@burrowingboreholeservice" class="social-btn tiktok-btn" target="_blank" rel="noopener noreferrer" aria-label="Visit our TikTok page">
-                                <span class="social-icon tiktok-icon"></span>
-                            </a>
-                        </div>
-                    </div>
+                <p>Reach out to discuss your water solution needs.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:burrowingboreholeservices@outlook.com" class="btn">Email Us</a>
+                    <a href="https://wa.me/256707140593" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+                        <span class="whatsapp-icon"></span>
+                    </a>
+                    <a href="https://www.facebook.com/burrowingboreholeservices" class="facebook-btn" target="_blank" aria-label="Visit our Facebook page">
+                        <span class="facebook-icon"></span>
+                    </a>
+                    <a href="https://www.instagram.com/burrowing.borehole.services_ug?igsh=MW1xNTZxbm90eXFxdA==" class="instagram-btn" target="_blank" aria-label="Visit our Instagram page">
+                        <span class="instagram-icon"></span>
+                    </a>
+                    <a href="http://www.tiktok.com/@burrowingboreholeservice" class="tiktok-btn" target="_blank" aria-label="Visit our TikTok page">
+                            <span class="tiktok-icon"></span>
+                        </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Content Section -->
     <section class="why-choose-us">
         <div class="container">
             <h2>Get in Touch</h2>
             <div class="features">
-                <div class="feature card">
-                    <h3>Email</h3>
-                    <p>Reach out to us at<br><a href="mailto:info@burrowingborehole.com" class="contact-link">info@burrowingborehole.com</a></p>
-                </div>
-                <div class="feature card">
+                <div class="feature">
                     <h3>Phone</h3>
-                    <p>Call us at<br><a href="tel:+256707140593" class="contact-link">+256 707140593</a></p>
+                    <p><a href="tel:+256707140593">+256 707140593</a></p>
                 </div>
-                <div class="feature card location-card">
-                    <h3>Location</h3>
-                    <p>Buyiinza Building 2nd Floor<br>Nansana, Uganda</p>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                <div class="feature">
+                    <h3>Email</h3>
+                    <p><a href="mailto:burrowingboreholeservices@outlook.com">burrowingboreholeservices@outlook.com</a></p>
+                </div>
+                <div class="feature">
+                    <h3>Address</h3>
+                    <p>Buyiinza Building 2nd Floor, Nansana, Uganda</p>
                 </div>
             </div>
         </div>
