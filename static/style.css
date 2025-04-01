@@ -68,21 +68,20 @@ nav .nav-menu li.active a {
     color: #fff;
 }
 
-/* Hamburger Menu Styles */
-.nav-toggle {
-    display: none; /* Hidden by default, used for toggle */
-}
-
-.hamburger {
+/* Menu Toggle Button Styles */
+.menu-toggle {
     display: none; /* Hidden on desktop */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
+    background: none;
+    border: none;
     cursor: pointer;
+    padding: 0;
 }
 
-.hamburger span {
+.menu-toggle span {
     width: 100%;
     height: 3px;
     background: #333;
@@ -696,7 +695,7 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    /* Navigation Adjustments for Hamburger */
+    /* Navigation Adjustments for Mobile */
     nav .container {
         flex-direction: row;
         justify-content: space-between;
@@ -704,12 +703,12 @@ footer p {
         position: relative;
     }
 
-    .hamburger {
-        display: flex; /* Show hamburger (three bars) on mobile */
+    .menu-toggle {
+        display: flex; /* Show three-bar icon on mobile */
     }
 
     .nav-menu {
-        display: none; /* Hide navigation by default on mobile */
+        display: none; /* Hide menu by default on mobile */
         flex-direction: column;
         position: absolute;
         top: 100%; /* Below nav bar */
@@ -721,9 +720,8 @@ footer p {
         z-index: 99;
     }
 
-    /* Show menu only when checkbox is checked */
-    .nav-toggle:checked ~ .nav-menu {
-        display: flex;
+    .nav-menu.active {
+        display: flex; /* Show menu when active class is added */
     }
 
     .nav-menu li {
