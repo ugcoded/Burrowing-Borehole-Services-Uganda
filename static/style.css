@@ -34,7 +34,6 @@ nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* Contain the menu */
 }
 
 nav .logo img {
@@ -680,6 +679,8 @@ footer {
     text-align: center;
     padding: 25px 0;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Below menu */
 }
 
 footer p {
@@ -701,7 +702,6 @@ footer p {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 80px; /* Fixed height to contain menu */
     }
 
     .menu-toggle {
@@ -710,35 +710,38 @@ footer p {
 
     .nav-menu {
         display: none; /* Hidden by default */
-        position: absolute;
-        top: 0; /* Align with nav top */
-        right: -200px; /* Off-screen initially */
-        width: 200px;
-        height: 100%; /* Match nav height */
+        position: fixed; /* Full-screen overlay */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Full height */
         background: linear-gradient(135deg, #f7c948, #e6b32f);
         flex-direction: column;
         justify-content: center;
-        padding: 0;
-        margin: 0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
-        z-index: 99;
+        align-items: center;
+        padding: 20px;
+        z-index: 200; /* Above everything */
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity 0.3s ease, transform 0s ease 0.3s; /* Smooth fade */
     }
 
     .nav-menu.active {
         display: flex; /* Show when active */
-        right: 0; /* Slide in from right */
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease; /* Fade in */
     }
 
     .nav-menu li {
-        margin: 5px 0; /* Tighter spacing */
-        text-align: center;
+        margin: 20px 0; /* Spacious */
     }
 
     .nav-menu li a {
-        font-size: 14px;
-        padding: 8px 10px; /* Smaller padding */
+        font-size: 20px; /* Larger for accessibility */
+        padding: 15px 30px; /* Bigger touch area */
         display: block;
+        border-radius: 30px;
     }
 
     /* Other Mobile Adjustments */
@@ -764,8 +767,7 @@ footer p {
 
 @media (max-width: 480px) {
     nav .logo img { height: 50px; }
-    nav .container { height: 70px; } /* Adjust nav height */
-    .nav-menu { width: 180px; right: -180px; } /* Smaller menu */
+    .nav-menu li a { font-size: 18px; padding: 12px 25px; }
     .hero { height: 400px; }
     .hero-content h1, main .container h1 { font-size: 28px; }
     .hero-content p { font-size: 14px; }
