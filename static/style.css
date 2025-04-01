@@ -705,14 +705,14 @@ footer p {
     }
 
     .hamburger {
-        display: flex; /* Show hamburger on mobile */
+        display: flex; /* Show hamburger (three bars) on mobile */
     }
 
     .nav-menu {
-        display: none; /* Hidden by default on mobile */
+        display: none; /* Hide navigation by default on mobile */
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Below nav */
+        top: 100%; /* Below nav bar */
         left: 0;
         width: 100%;
         background: linear-gradient(135deg, #f7c948, #e6b32f);
@@ -721,8 +721,9 @@ footer p {
         z-index: 99;
     }
 
+    /* Show menu only when checkbox is checked */
     .nav-toggle:checked ~ .nav-menu {
-        display: flex; /* Show when checkbox is checked */
+        display: flex;
     }
 
     .nav-menu li {
